@@ -1,11 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         isUnix()
         timestamps() {
           timeout(time: 1)
+          catchError() {
+            echo 'сс'
+          }
+          
         }
         
       }
